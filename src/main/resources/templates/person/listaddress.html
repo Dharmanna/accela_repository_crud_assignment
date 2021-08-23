@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<style>
+table, th, td {
+	border: 1px solid black;
+}
+</style>
+<title>Crud Operation Sample - List of Person's</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link
+	href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+	th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}"
+	rel="stylesheet" media="screen" />
+
+<script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+	th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+<link href="../../static/css/spring-core.css"
+	th:href="@{css/spring-core.css}" rel="stylesheet" media="screen" />
+</head>
+<body>
+	<div class="container">
+		<div th:if="${not #lists.isEmpty(addresses)}">
+			<h2>Person Address List</h2>
+			<table class="table table-striped" border="1">
+				<tr>
+					<th>Address Id</th>
+					<th>Person Id</th>
+					<th>Street</th>
+					<th>City</th>
+					<th>State</th>
+					<th>Postal Code</th>
+					<th>Edit</th>
+					<th>Delete</th>
+				</tr>
+				<tr th:each="address : ${addresses}">
+					<td th:text="${address.addressId}"></td>
+					<td th:text="${address.personId}"></td>
+					<td th:text="${address.street}"></td>
+					<td th:text="${address.city}"></td>
+					<td th:text="${address.state}"></td>
+					<td th:text="${address.postalCode}"></td>
+					<td><a th:href="${'/person/editAddress/' + address.addressId}">Edit
+							Address</a></td>
+					<td><a
+						th:href="${'/person/deleteAddress/' + address.addressId + '/' + address.personId}">Delete
+							Address</a></td>
+				</tr>
+			</table>
+		</div>
+		<div class="row">
+			<div class="col-sm-3">
+				<br /> <br /> <a href="/person/list">Go Back to List Of
+					Person's</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3"
+				th:if="${not #lists.isEmpty(numberOfAddresses)}">
+				<br /> <br /> <label class="col-sm-2 control-label">Total
+					Number of Address:</label>
+				<td th:text="${numberOfAddresses}"></td>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
