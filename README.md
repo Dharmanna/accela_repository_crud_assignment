@@ -2,6 +2,7 @@
   Example: /d/Temp
   
 2.Clone the repository run below command
+
   git clone https://github.com/Dharmanna/accela_repository_crud_assignment.git
   
 3.You will see /d/Temp/accela_repository_crud_assignment folder with (main) branch
@@ -40,12 +41,9 @@
   
 10.Go to browser
 
-  http://localhost:8080/
-  
-  Because this is entry point you'll see Add person link
+  http://localhost:8080/  --> Because this is entry point you'll see Add person link
   
 11. Start performing all operations 
- 
     1.	Add Person (id, firstName, lastName)
     2.	Edit Person (firstName, lastName)
     3.	Delete Person (id)
