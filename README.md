@@ -1,8 +1,11 @@
 1.Create local folder where you can checkout the code from public git repository
   Example: /d/Temp
+  
 2.Clone the repository run below command
   git clone https://github.com/Dharmanna/accela_repository_crud_assignment.git
+  
 3.You will see /d/Temp/accela_repository_crud_assignment folder with (main) branch
+
 4.Switch to master branch
   git checkout master
 5.Pull all code just to make sure you have all code
